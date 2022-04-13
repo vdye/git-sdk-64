@@ -4,6 +4,6 @@ includedir=${prefix}/include
 
 Name: cairo-ft
 Description: Freetype font backend for cairo graphics library
-Version: 1.17.4
+Version: 1.17.6
 Requires: cairo, freetype2 >=  9.7.3
 Cflags: -I${includedir}

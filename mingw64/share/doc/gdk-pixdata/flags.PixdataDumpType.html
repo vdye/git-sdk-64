@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixdata</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -81,10 +84,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -116,7 +117,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-      <p>An enumeration which is used by gdk_pixdata_to_csource() to
+      <p>An enumeration which is used by <code>gdk_pixdata_to_csource()</code> to
 determine the form of C source to be generated. The three values
 <code>GDK_PIXDATA_DUMP_PIXDATA_STREAM</code>, <code>GDK_PIXDATA_DUMP_PIXDATA_STRUCT</code>
 and <code>GDK_PIXDATA_DUMP_MACROS</code> are mutually exclusive, as are
@@ -128,6 +129,9 @@ elements are optional flags that can be freely&nbsp;added.</p>
         <table class="attributes">
           
           
+          
+          <tr><td>Deprecated since:</td><td>2.32</td></tr>
+          <tr><td colspan="2"><p>Please do not use it in newly written&nbsp;code.</p></td></tr>
           
         </table>
       </div>
@@ -149,19 +153,19 @@ elements are optional flags that can be freely&nbsp;added.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 0">GDK_PIXDATA_DUMP_PIXDATA_STREAM</code></td>
+          <td><a id="pixdata_stream" href="#pixdata_stream"><code title="Value: 0">GDK_PIXDATA_DUMP_PIXDATA_STREAM</code></a></td>
           <td><p>Generate pixbuf data stream (a single
    string containing a serialized <code>GdkPixdata</code> structure in network byte&nbsp;order).</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 1">GDK_PIXDATA_DUMP_PIXDATA_STRUCT</code></td>
+          <td><a id="pixdata_struct" href="#pixdata_struct"><code title="Value: 1">GDK_PIXDATA_DUMP_PIXDATA_STRUCT</code></a></td>
           <td><p>Generate <code>GdkPixdata</code> structure (needs
    the <code>GdkPixdata</code> structure definition from&nbsp;gdk-pixdata.h).</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 2">GDK_PIXDATA_DUMP_MACROS</code></td>
+          <td><a id="macros" href="#macros"><code title="Value: 2">GDK_PIXDATA_DUMP_MACROS</code></a></td>
           <td><p>Generate <function><em>_ROWSTRIDE</function>,
    <function></em>_WIDTH</function>, <function><em>_HEIGHT</function>,
    <function></em>_BYTES_PER_PIXEL</function> and
@@ -170,29 +174,29 @@ elements are optional flags that can be freely&nbsp;added.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 0">GDK_PIXDATA_DUMP_GTYPES</code></td>
+          <td><a id="gtypes" href="#gtypes"><code title="Value: 0">GDK_PIXDATA_DUMP_GTYPES</code></a></td>
           <td><p>Generate GLib data types instead of
    standard C data&nbsp;types.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 256">GDK_PIXDATA_DUMP_CTYPES</code></td>
+          <td><a id="ctypes" href="#ctypes"><code title="Value: 256">GDK_PIXDATA_DUMP_CTYPES</code></a></td>
           <td><p>Generate standard C data types instead of
    GLib data&nbsp;types.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 512">GDK_PIXDATA_DUMP_STATIC</code></td>
+          <td><a id="static" href="#static"><code title="Value: 512">GDK_PIXDATA_DUMP_STATIC</code></a></td>
           <td><p>Generate static&nbsp;symbols.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 1024">GDK_PIXDATA_DUMP_CONST</code></td>
+          <td><a id="const" href="#const"><code title="Value: 1024">GDK_PIXDATA_DUMP_CONST</code></a></td>
           <td><p>Generate const&nbsp;symbols.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 65536">GDK_PIXDATA_DUMP_RLE_DECODER</code></td>
+          <td><a id="rle_decoder" href="#rle_decoder"><code title="Value: 65536">GDK_PIXDATA_DUMP_RLE_DECODER</code></a></td>
           <td><p>Provide a <function>*_RUN_LENGTH_DECODE(image_buf, rle_data, size, bpp)</function>
    macro definition  to  decode  run-length encoded image&nbsp;data.</p></td>
         </tr>
@@ -207,6 +211,22 @@ elements are optional flags that can be freely&nbsp;added.</p>
 
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      <li class="toc-list-item"><a href="#members"><span class="link-text">Members</span></a></li>
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

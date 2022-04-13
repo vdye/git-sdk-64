@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -92,10 +95,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -115,11 +116,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">GdkPixbufAnimationIter</span><span class="o">*</span>
-<span class="n">get_iter</span> <span class="p">(</span>
-  <span class="n">GdkPixbufAnimation</span><span class="o">*</span> <span class="n">animation</span><span class="p">,</span>
-  <span class="k">const</span> <span class="n">GTimeVal</span><span class="o">*</span> <span class="n">start_time</span>
-<span class="p">)</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">GdkPixbufAnimationIter</span><span class="o">*</span><span class="w"></span>
+<span class="n">get_iter</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">GdkPixbufAnimation</span><span class="o">*</span><span class="w"> </span><span class="n">animation</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">GTimeVal</span><span class="o">*</span><span class="w"> </span><span class="n">start_time</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
       </div>
@@ -144,18 +145,18 @@ should immediately display the pixbuf returned by
 gdk_pixbuf_animation_iter_get_pixbuf(). Then, you should install
 a timeout (with g_timeout_add()) or by some other mechanism ensure
 that you&#8217;ll update the image after
-gdk_pixbuf_animation_iter_get_delay_time() milliseconds. Each time
+<code>gdk_pixbuf_animation_iter_get_delay_time()</code> milliseconds. Each time
 the image is updated, you should reinstall the timeout with the new,
 possibly-changed delay&nbsp;time.</p>
 <p>As a shortcut, if <code>start_time</code> is <code>NULL</code>, the result of
-g_get_current_time() will be used&nbsp;automatically.</p>
+<code>g_get_current_time()</code> will be used&nbsp;automatically.</p>
 <p>To update the image (i.e. possibly change the result of
-gdk_pixbuf_animation_iter_get_pixbuf() to a new frame of the animation),
+<code>gdk_pixbuf_animation_iter_get_pixbuf()</code> to a new frame of the animation),
 call&nbsp;gdk_pixbuf_animation_iter_advance().</p>
 <p>If you&#8217;re using <code>GdkPixbufLoader</code>, in addition to updating the image
 after the delay time, you should also update it whenever you
 receive the area_updated signal and
-gdk_pixbuf_animation_iter_on_currently_loading_frame() returns
+<code>gdk_pixbuf_animation_iter_on_currently_loading_frame()</code> returns
 <code>TRUE</code>. In this case, the frame currently being fed into the loader
 has received new data, so needs to be refreshed. The delay time for
 a frame may also be modified after an area_updated signal, for
@@ -188,7 +189,7 @@ area_updated&nbsp;signal.</p>
           
           <tr class="arg-name">
             <td><code>start_time</code></td>
-            <td><code>const GTimeVal*</code></td>
+            <td><a href="javascript:void(0)" data-link="struct.TimeVal.html" data-namespace="GLib" class="external"><code>GTimeVal</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
@@ -241,6 +242,8 @@ area_updated&nbsp;signal.</p>
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

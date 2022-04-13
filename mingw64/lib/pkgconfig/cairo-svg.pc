@@ -4,6 +4,6 @@ includedir=${prefix}/include
 
 Name: cairo-svg
 Description: SVG surface backend for cairo graphics library
-Version: 1.17.4
+Version: 1.17.6
 Requires: cairo, libpng
 Cflags: -I${includedir}

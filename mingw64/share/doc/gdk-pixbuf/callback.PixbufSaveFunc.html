@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -80,10 +83,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -101,13 +102,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
-<span class="n">PixbufSaveFunc</span> <span class="p">(</span>
-  <span class="k">const</span> <span class="n">gchar</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
-  <span class="n">gsize</span> <span class="n">count</span><span class="p">,</span>
-  <span class="n">GError</span><span class="o">**</span> <span class="n">error</span><span class="p">,</span>
-  <span class="n">gpointer</span> <span class="n">data</span>
-<span class="p">)</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
+<span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">GdkPixbufSaveFunc</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">data</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
       </div>
@@ -123,7 +124,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <p>Save functions used by <a href="method.Pixbuf.save_to_callback.html">gdk_pixbuf_save_to_callback()</a>.</p>
+        <p>Save functions used by <a href="method.Pixbuf.save_to_callback.html"><code>gdk_pixbuf_save_to_callback()</code></a>.</p>
 <p>This function is called once for each block of bytes that is &#8220;written&#8221;
 by <code>gdk_pixbuf_save_to_callback()</code>.</p>
 <p>If successful it should return <code>TRUE</code>; if an error occurs it should set
@@ -136,6 +137,9 @@ will fail with the same&nbsp;error.</p>
           
           
           <tr><td>Available since:</td><td>2.4</td></tr>
+          
+          
+          
           
           
         </table>
@@ -192,7 +196,7 @@ will fail with the same&nbsp;error.</p>
           
           <tr class="arg-name">
             <td><code>error</code></td>
-            <td><code>GError**</code></td>
+            <td><a href="javascript:void(0)" data-link="struct.Error.html" data-namespace="GLib" class="external"><code>GError</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
@@ -217,13 +221,13 @@ will fail with the same&nbsp;error.</p>
             <td><p>User data passed to&nbsp;gdk_pixbuf_save_to_callback().</p></td>
           </tr>
           
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
           
           
           
           
           
-          
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           
@@ -262,6 +266,8 @@ will fail with the same&nbsp;error.</p>
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

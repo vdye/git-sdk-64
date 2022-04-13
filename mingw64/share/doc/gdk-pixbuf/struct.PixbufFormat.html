@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -76,6 +79,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="current" href="struct.PixbufFormat.html#description">PixbufFormat</a>
   </div>
 </div>
+
+
 
 
 
@@ -113,13 +118,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-
-
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -135,21 +136,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/blob/master/gdk-pixbuf/gdk-pixbuf-io.h#L311">[src]</a>
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/blob/master/gdk-pixbuf/gdk-pixbuf-io.h#L443">[src]</a>
           
         </h4>
 
-        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">GdkPixbufFormat</span> <span class="p">{</span>
-  <span class="n">gchar</span><span class="o">*</span> <span class="n">name</span><span class="p">;</span>
-  <span class="n">GdkPixbufModulePattern</span><span class="o">*</span> <span class="n">signature</span><span class="p">;</span>
-  <span class="n">gchar</span><span class="o">*</span> <span class="n">domain</span><span class="p">;</span>
-  <span class="n">gchar</span><span class="o">*</span> <span class="n">description</span><span class="p">;</span>
-  <span class="n">gchar</span><span class="o">**</span> <span class="n">mime_types</span><span class="p">;</span>
-  <span class="n">gchar</span><span class="o">**</span> <span class="n">extensions</span><span class="p">;</span>
-  <span class="n">guint32</span> <span class="n">flags</span><span class="p">;</span>
-  <span class="n">gboolean</span> <span class="n">disabled</span><span class="p">;</span>
-  <span class="n">gchar</span><span class="o">*</span> <span class="n">license</span><span class="p">;</span>
-<span class="p">}</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">GdkPixbufFormat</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">GdkPixbufModulePattern</span><span class="o">*</span><span class="w"> </span><span class="n">signature</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">domain</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">description</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">gchar</span><span class="o">**</span><span class="w"> </span><span class="n">mime_types</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">gchar</span><span class="o">**</span><span class="w"> </span><span class="n">extensions</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">flags</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">gboolean</span><span class="w"> </span><span class="n">disabled</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">license</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </code></pre>
 
@@ -239,6 +240,8 @@ use the <code>gdk_pixbuf_format_*</code> family of&nbsp;functions.</p>
     
 
     
+
+    
     <div class="toggle-wrapper methods">
       <h4 id="methods">
         Instance methods
@@ -262,7 +265,7 @@ use the <code>gdk_pixbuf_format_*</code> family of&nbsp;functions.</p>
 
           <div class="docblock">
             <p>Frees the resources allocated when copying a <code>GdkPixbufFormat</code>
-using&nbsp;gdk_pixbuf_format_copy()</p>
+using <code>gdk_pixbuf_format_copy()</code></p>
           </div>
 
           <div class="docblock"><p>Available since: 2.22</p></div>
@@ -375,10 +378,28 @@ saving a pixbuf using the module implementing <code>format</code>.</p>
     </div>
     
 
-    
-
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

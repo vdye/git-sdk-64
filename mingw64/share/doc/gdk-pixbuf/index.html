@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -119,10 +122,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -136,7 +137,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.42.6</td></tr>
+        <tr><td><em>Version</em></td><td>2.42.8</td></tr>
         <tr><td><em>Authors</em></td><td>GTK Development Team</td></tr>
         <tr><td><em>License</em></td><td>GPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.gtk.org" class="external">https://www.gtk.org</a></td></tr>
@@ -167,28 +168,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <table>
         
+          
+        
+          
+        
+          
           <tr>
-            <td><strong>GObject</strong></td>
+            <td><strong>GObject</strong>&mdash;2.0</td>
             <td>The base type system library</td>
           </tr>
           <tr>
             <td></td>
             <td><a href="https://developer.gnome.org/gobject/stable" class="external">Browse documentation</a></td>
           </tr>
+          
         
-          <tr>
-            <td><strong>GIO</strong></td>
-            <td>GObject Interfaces and Objects</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><a href="https://developer.gnome.org/gio/stable" class="external">Browse documentation</a></td>
-          </tr>
+          
         
         </table>
       </div>
     </div>
   </section>
+  
+
   
 
   
@@ -444,6 +446,13 @@ of a&nbsp;pixbuf.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="PixbufModuleBeginLoadFunc" class="symbol" href="callback.PixbufModuleBeginLoadFunc.html">PixbufModuleBeginLoadFunc</a></td>
+            
+            <td class="docblock-summary"><p>Sets up the image loading&nbsp;state.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PixbufModuleFillInfoFunc" class="symbol" href="callback.PixbufModuleFillInfoFunc.html">PixbufModuleFillInfoFunc</a></td>
             
             <td class="docblock-summary"><p>Defines the type of the function used to fill a
@@ -460,6 +469,34 @@ of a&nbsp;pixbuf.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="PixbufModuleIncrementLoadFunc" class="symbol" href="callback.PixbufModuleIncrementLoadFunc.html">PixbufModuleIncrementLoadFunc</a></td>
+            
+            <td class="docblock-summary"><p>Incrementally loads a buffer into the image&nbsp;data.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PixbufModuleLoadAnimationFunc" class="symbol" href="callback.PixbufModuleLoadAnimationFunc.html">PixbufModuleLoadAnimationFunc</a></td>
+            
+            <td class="docblock-summary"><p>Loads a file from a standard C file stream into a new <code>GdkPixbufAnimation</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PixbufModuleLoadFunc" class="symbol" href="callback.PixbufModuleLoadFunc.html">PixbufModuleLoadFunc</a></td>
+            
+            <td class="docblock-summary"><p>Loads a file from a standard C file stream into a new <code>GdkPixbuf</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PixbufModuleLoadXpmDataFunc" class="symbol" href="callback.PixbufModuleLoadXpmDataFunc.html">PixbufModuleLoadXpmDataFunc</a></td>
+            
+            <td class="docblock-summary"><p>Loads <span class="caps">XPM</span> data into a new <code>GdkPixbuf</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PixbufModulePreparedFunc" class="symbol" href="callback.PixbufModulePreparedFunc.html">PixbufModulePreparedFunc</a></td>
             
             <td class="docblock-summary"><p>Defines the type of the function that gets called once the initial
@@ -468,10 +505,38 @@ setup of <code>pixbuf</code> is&nbsp;done.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="PixbufModuleSaveCallbackFunc" class="symbol" href="callback.PixbufModuleSaveCallbackFunc.html">PixbufModuleSaveCallbackFunc</a></td>
+            
+            <td class="docblock-summary"><p>Saves a <code>GdkPixbuf</code> by calling the provided&nbsp;function.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PixbufModuleSaveFunc" class="symbol" href="callback.PixbufModuleSaveFunc.html">PixbufModuleSaveFunc</a></td>
+            
+            <td class="docblock-summary"><p>Saves a <code>GdkPixbuf</code> into a standard C file&nbsp;stream.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PixbufModuleSaveOptionSupportedFunc" class="symbol" href="callback.PixbufModuleSaveOptionSupportedFunc.html">PixbufModuleSaveOptionSupportedFunc</a></td>
+            
+            <td class="docblock-summary"><p>Checks whether the given <code>option_key</code> is supported when&nbsp;saving.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PixbufModuleSizeFunc" class="symbol" href="callback.PixbufModuleSizeFunc.html">PixbufModuleSizeFunc</a></td>
             
             <td class="docblock-summary"><p>Defines the type of the function that gets called once the size
 of the loaded image is&nbsp;known.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PixbufModuleStopLoadFunc" class="symbol" href="callback.PixbufModuleStopLoadFunc.html">PixbufModuleStopLoadFunc</a></td>
+            
+            <td class="docblock-summary"><p>Finalizes the image loading&nbsp;state.</p></td>
             
           </tr>
           
@@ -486,7 +551,7 @@ of <code>pixbuf</code> is&nbsp;updated.</p></td>
           <tr class="section-item">
             <td><a title="PixbufSaveFunc" class="symbol" href="callback.PixbufSaveFunc.html">PixbufSaveFunc</a></td>
             
-            <td class="docblock-summary"><p>Save functions used by&nbsp;gdk_pixbuf_save_to_callback().</p></td>
+            <td class="docblock-summary"><p>Save functions used by <code>gdk_pixbuf_save_to_callback()</code>.</p></td>
             
           </tr>
           
@@ -573,6 +638,8 @@ of <code>pixbuf</code> is&nbsp;updated.</p></td>
   
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

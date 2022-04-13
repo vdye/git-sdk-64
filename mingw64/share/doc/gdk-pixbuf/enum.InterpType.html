@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -81,10 +84,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -149,14 +150,14 @@ interpolation is just as fast and results in higher&nbsp;quality.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 0">GDK_INTERP_NEAREST</code></td>
+          <td><a id="nearest" href="#nearest"><code title="Value: 0">GDK_INTERP_NEAREST</code></a></td>
           <td><p>Nearest neighbor sampling; this is the fastest
  and lowest quality mode. Quality is normally unacceptable when scaling
  down, but may be <span class="caps">OK</span> when scaling&nbsp;up.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 1">GDK_INTERP_TILES</code></td>
+          <td><a id="tiles" href="#tiles"><code title="Value: 1">GDK_INTERP_TILES</code></a></td>
           <td><p>This is an accurate simulation of the PostScript
  image operator without any interpolation enabled.  Each pixel is
  rendered as a tiny parallelogram of solid color, the edges of which
@@ -165,7 +166,7 @@ interpolation is just as fast and results in higher&nbsp;quality.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 2">GDK_INTERP_BILINEAR</code></td>
+          <td><a id="bilinear" href="#bilinear"><code title="Value: 2">GDK_INTERP_BILINEAR</code></a></td>
           <td><p>Best quality/speed balance; use this mode by
  default. Bilinear interpolation.  For enlargement, it is
  equivalent to point-sampling the ideal bilinear-interpolated image.
@@ -174,7 +175,7 @@ interpolation is just as fast and results in higher&nbsp;quality.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 3">GDK_INTERP_HYPER</code></td>
+          <td><a id="hyper" href="#hyper"><code title="Value: 3">GDK_INTERP_HYPER</code></a></td>
           <td><p>This is the slowest and highest quality
  reconstruction function. It is derived from the hyperbolic filters in
  Wolberg&#8217;s &#8220;Digital Image Warping&#8221;, and is formally defined as the
@@ -195,6 +196,22 @@ interpolation is just as fast and results in higher&nbsp;quality.</p>
 
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      <li class="toc-list-item"><a href="#members"><span class="link-text">Members</span></a></li>
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

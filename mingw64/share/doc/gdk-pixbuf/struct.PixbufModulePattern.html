@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -85,10 +88,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -108,11 +109,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
         </h4>
 
-        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">GdkPixbufModulePattern</span> <span class="p">{</span>
-  <span class="kt">char</span><span class="o">*</span> <span class="n">prefix</span><span class="p">;</span>
-  <span class="kt">char</span><span class="o">*</span> <span class="n">mask</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">relevance</span><span class="p">;</span>
-<span class="p">}</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">GdkPixbufModulePattern</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">prefix</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">mask</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">relevance</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </code></pre>
 
@@ -132,11 +133,11 @@ like an&nbsp;&#8216;x&#8217;.</p>
 <p>The signature of a module is stored as an array of
 <code>GdkPixbufModulePatterns</code>. The array is terminated by a pattern
 where the <code>prefix</code> is <code>NULL</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">GdkPixbufModulePattern</span> <span class="o">*</span><span class="n">signature</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">{</span> <span class="s">&quot;abcdx&quot;</span><span class="p">,</span> <span class="s">&quot; !x z&quot;</span><span class="p">,</span> <span class="mi">100</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="s">&quot;bla&quot;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span>  <span class="mi">90</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span> <span class="p">}</span>
-<span class="p">};</span>
+<div class="codehilite"><pre><span></span><code><span class="n">GdkPixbufModulePattern</span><span class="w"> </span><span class="o">*</span><span class="n">signature</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;abcdx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; !x z&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;bla&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w">  </span><span class="mi">90</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
 
 <p>In the example above, the signature matches e.g. &#8220;auud\0&#8221; with
@@ -196,6 +197,24 @@ relevance 100, and &#8220;blau&#8221; with relevance&nbsp;90.</p>
 
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

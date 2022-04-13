@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -92,10 +95,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -112,11 +113,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">area_prepared</span> <span class="p">(</span>
-  <span class="n">GdkPixbufLoader</span> <span class="n">self</span><span class="p">,</span>
-  <span class="n">gpointer</span> <span class="n">user_data</span>
-<span class="p">)</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="n">area_prepared</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">GdkPixbufLoader</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
       </div>
@@ -135,7 +136,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p>This signal is emitted when the pixbuf loader has allocated the
 pixbuf in the desired&nbsp;size.</p>
 <p>After this signal is emitted, applications can call
-gdk_pixbuf_loader_get_pixbuf() to fetch the partially-loaded&nbsp;pixbuf.</p>
+<code>gdk_pixbuf_loader_get_pixbuf()</code> to fetch the partially-loaded&nbsp;pixbuf.</p>
       </div>
 
       <div class="docblock">
@@ -161,6 +162,8 @@ gdk_pixbuf_loader_get_pixbuf() to fetch the partially-loaded&nbsp;pixbuf.</p>
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

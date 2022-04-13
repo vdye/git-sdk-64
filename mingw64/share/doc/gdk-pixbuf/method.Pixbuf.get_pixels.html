@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -172,10 +175,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -195,10 +196,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">guchar</span><span class="o">*</span>
-<span class="n">gdk_pixbuf_get_pixels</span> <span class="p">(</span>
-  <span class="k">const</span> <span class="n">GdkPixbuf</span><span class="o">*</span> <span class="n">pixbuf</span>
-<span class="p">)</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">guchar</span><span class="o">*</span><span class="w"></span>
+<span class="n">gdk_pixbuf_get_pixels</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">GdkPixbuf</span><span class="o">*</span><span class="w"> </span><span class="n">pixbuf</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
       </div>
@@ -217,7 +218,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p>Queries a pointer to the pixel data of a&nbsp;pixbuf.</p>
 <p>This function will cause an implicit copy of the pixbuf data if the
 pixbuf was created from read-only&nbsp;data.</p>
-<p>Please see the section on <a href="#image-data">image data</a> for information
+<p>Please see the section on <a href="class.Pixbuf.html#image-data">image data</a> for information
 about how the pixel data is stored in&nbsp;memory.</p>
       </div>
 
@@ -226,9 +227,22 @@ about how the pixel data is stored in&nbsp;memory.</p>
           
           
           
+          
+          
+          
+          <tr><td>The implementation of this method is provided by <a href="method.Pixbuf.get_pixels_with_length.html"><code>gdk_pixbuf_get_pixels_with_length()</code></a> in language bindings</td></tr>
+          
         </table>
       </div>
 
+      
+      <div class="docblock">
+        <table>
+        
+          <tr><td>Gets property</td><td><a href="property.Pixbuf.pixels.html"><code>GdkPixbuf.Pixbuf:pixels</code></a></td></tr>
+        
+        </table>
+      </div>
       
     </div>
 
@@ -265,6 +279,8 @@ about how the pixel data is stored in&nbsp;memory.</p>
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

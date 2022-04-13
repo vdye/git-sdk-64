@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixdata</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -81,10 +84,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -126,6 +127,9 @@ for the encoding of the pixel&nbsp;data.</p>
           
           
           
+          <tr><td>Deprecated since:</td><td>2.32</td></tr>
+          <tr><td colspan="2"><p>Please do not use it in newly written&nbsp;code.</p></td></tr>
+          
         </table>
       </div>
 
@@ -146,38 +150,38 @@ for the encoding of the pixel&nbsp;data.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 1">GDK_PIXDATA_COLOR_TYPE_RGB</code></td>
+          <td><a id="color_type_rgb" href="#color_type_rgb"><code title="Value: 1">GDK_PIXDATA_COLOR_TYPE_RGB</code></a></td>
           <td><p>Each pixel has red, green and blue&nbsp;samples.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 2">GDK_PIXDATA_COLOR_TYPE_RGBA</code></td>
+          <td><a id="color_type_rgba" href="#color_type_rgba"><code title="Value: 2">GDK_PIXDATA_COLOR_TYPE_RGBA</code></a></td>
           <td><p>Each pixel has red, green and blue samples
    and an alpha&nbsp;value.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 255">GDK_PIXDATA_COLOR_TYPE_MASK</code></td>
+          <td><a id="color_type_mask" href="#color_type_mask"><code title="Value: 255">GDK_PIXDATA_COLOR_TYPE_MASK</code></a></td>
           <td><p>Mask for the colortype flags of the&nbsp;enum.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 65536">GDK_PIXDATA_SAMPLE_WIDTH_8</code></td>
+          <td><a id="sample_width_8" href="#sample_width_8"><code title="Value: 65536">GDK_PIXDATA_SAMPLE_WIDTH_8</code></a></td>
           <td><p>Each sample has 8&nbsp;bits.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 983040">GDK_PIXDATA_SAMPLE_WIDTH_MASK</code></td>
+          <td><a id="sample_width_mask" href="#sample_width_mask"><code title="Value: 983040">GDK_PIXDATA_SAMPLE_WIDTH_MASK</code></a></td>
           <td><p>Mask for the sample width flags of the&nbsp;enum.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 16777216">GDK_PIXDATA_ENCODING_RAW</code></td>
+          <td><a id="encoding_raw" href="#encoding_raw"><code title="Value: 16777216">GDK_PIXDATA_ENCODING_RAW</code></a></td>
           <td><p>The pixel data is in raw&nbsp;form.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 33554432">GDK_PIXDATA_ENCODING_RLE</code></td>
+          <td><a id="encoding_rle" href="#encoding_rle"><code title="Value: 33554432">GDK_PIXDATA_ENCODING_RLE</code></a></td>
           <td><p>The pixel data is run-length encoded. Runs may
    be up to 127 bytes long; their length is stored in a single byte
    preceding the pixel data for the run. If a run is constant, its length
@@ -186,7 +190,7 @@ for the encoding of the pixel&nbsp;data.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 251658240">GDK_PIXDATA_ENCODING_MASK</code></td>
+          <td><a id="encoding_mask" href="#encoding_mask"><code title="Value: 251658240">GDK_PIXDATA_ENCODING_MASK</code></a></td>
           <td><p>Mask for the encoding flags of the&nbsp;enum.</p></td>
         </tr>
       
@@ -200,6 +204,22 @@ for the encoding of the pixel&nbsp;data.</p>
 
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      <li class="toc-list-item"><a href="#members"><span class="link-text">Members</span></a></li>
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -81,10 +84,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -117,7 +118,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
       <div class="docblock">
       <p>Control the alpha channel for&nbsp;drawables.</p>
-<p>These values can be passed to gdk_pixbuf_xlib_render_to_drawable_alpha()
+<p>These values can be passed to <code>gdk_pixbuf_xlib_render_to_drawable_alpha()</code>
 in gdk-pixbuf-xlib to control how the alpha channel of an image should
 be&nbsp;handled.</p>
 <p>This function can create a bilevel clipping mask (black and white) and use
@@ -157,7 +158,7 @@ For now both cases fall back to a bilevel clipping&nbsp;mask.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 0">GDK_PIXBUF_ALPHA_BILEVEL</code></td>
+          <td><a id="bilevel" href="#bilevel"><code title="Value: 0">GDK_PIXBUF_ALPHA_BILEVEL</code></a></td>
           <td><p>A bilevel clipping mask (black and white)
  will be created and used to draw the image.  Pixels below 0.5 opacity
  will be considered fully transparent, and all others will be
@@ -165,7 +166,7 @@ For now both cases fall back to a bilevel clipping&nbsp;mask.</p>
         </tr>
       
         <tr>
-          <td><code title="Value: 1">GDK_PIXBUF_ALPHA_FULL</code></td>
+          <td><a id="full" href="#full"><code title="Value: 1">GDK_PIXBUF_ALPHA_FULL</code></a></td>
           <td><p>For now falls back to #GDK_PIXBUF_ALPHA_BILEVEL.
  In the future it will do full alpha&nbsp;compositing.</p></td>
         </tr>
@@ -180,6 +181,22 @@ For now both cases fall back to a bilevel clipping&nbsp;mask.</p>
 
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      <li class="toc-list-item"><a href="#members"><span class="link-text">Members</span></a></li>
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

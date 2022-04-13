@@ -34,6 +34,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -66,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">GdkPixbuf</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.42.6</p>
+        <p>Library Version: 2.42.8</p>
         
       </div>
       
@@ -113,6 +116,33 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="ctor" href="ctor.Pixbuf.new_from_stream_finish.html">new_from_stream_finish</a>
   
     <a class="ctor" href="ctor.Pixbuf.new_from_xpm_data.html">new_from_xpm_data</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Pixbuf.calculate_rowstride.html">calculate_rowstride</a>
+  
+    <a class="func" href="type_func.Pixbuf.get_file_info.html">get_file_info</a>
+  
+    <a class="func" href="type_func.Pixbuf.get_file_info_async.html">get_file_info_async</a>
+  
+    <a class="func" href="type_func.Pixbuf.get_file_info_finish.html">get_file_info_finish</a>
+  
+    <a class="func" href="type_func.Pixbuf.get_formats.html">get_formats</a>
+  
+    <a class="func" href="type_func.Pixbuf.init_modules.html">init_modules</a>
+  
+    <a class="func" href="type_func.Pixbuf.new_from_stream_async.html">new_from_stream_async</a>
+  
+    <a class="func" href="type_func.Pixbuf.new_from_stream_at_scale_async.html">new_from_stream_at_scale_async</a>
+  
+    <a class="func" href="type_func.Pixbuf.save_to_stream_finish.html">save_to_stream_finish</a>
   
   </div>
 </div>
@@ -247,40 +277,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-<div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Pixbuf.calculate_rowstride.html">calculate_rowstride</a>
-  
-    <a class="func" href="type_func.Pixbuf.get_file_info.html">get_file_info</a>
-  
-    <a class="func" href="type_func.Pixbuf.get_file_info_async.html">get_file_info_async</a>
-  
-    <a class="func" href="type_func.Pixbuf.get_file_info_finish.html">get_file_info_finish</a>
-  
-    <a class="func" href="type_func.Pixbuf.get_formats.html">get_formats</a>
-  
-    <a class="func" href="type_func.Pixbuf.init_modules.html">init_modules</a>
-  
-    <a class="func" href="type_func.Pixbuf.new_from_stream_async.html">new_from_stream_async</a>
-  
-    <a class="func" href="type_func.Pixbuf.new_from_stream_at_scale_async.html">new_from_stream_at_scale_async</a>
-  
-    <a class="func" href="type_func.Pixbuf.save_to_stream_finish.html">save_to_stream_finish</a>
-  
-  </div>
-</div>
-
-
-
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -313,7 +314,7 @@ and the start of the&nbsp;next).</p>
 <h2 id="creating-new-gdkpixbuf">Creating new <code>GdkPixbuf</code><a class="md-anchor" href="#creating-new-gdkpixbuf" title="Permanent link"></a></h2>
 <p>The most basic way to create a pixbuf is to wrap an existing pixel
 buffer with a <a href="class.Pixbuf.html"><code>GdkPixbuf</code></a> instance. You can use the
-<a href="ctor.Pixbuf.new_from_data.html">gdk_pixbuf_new_from_data()</a> function to do&nbsp;this.</p>
+<a href="ctor.Pixbuf.new_from_data.html"><code>gdk_pixbuf_new_from_data()</code></a> function to do&nbsp;this.</p>
 <p>Every time you create a new <code>GdkPixbuf</code> instance for some data, you
 will need to specify the destroy notification function that will be
 called when the data buffer needs to be freed; this will happen when
@@ -321,15 +322,15 @@ a <code>GdkPixbuf</code> is finalized by the reference counting functions. If
 you have a chunk of static data compiled into your application, you
 can pass in <code>NULL</code> as the destroy notification function so that the
 data will not be&nbsp;freed.</p>
-<p>The <a href="ctor.Pixbuf.new.html">gdk_pixbuf_new()</a> constructor function can be used
+<p>The <a href="ctor.Pixbuf.new.html"><code>gdk_pixbuf_new()</code></a> constructor function can be used
 as a convenience to create a pixbuf with an empty buffer; this is
 equivalent to allocating a data buffer using <code>malloc()</code> and then
 wrapping it with <code>gdk_pixbuf_new_from_data()</code>. The <code>gdk_pixbuf_new()</code>
 function will compute an optimal rowstride so that rendering can be
 performed with an efficient&nbsp;algorithm.</p>
-<p>As a special case, you can use the <a href="ctor.Pixbuf.new_from_xpm_data.html">gdk_pixbuf_new_from_xpm_data()</a>
+<p>As a special case, you can use the <a href="ctor.Pixbuf.new_from_xpm_data.html"><code>gdk_pixbuf_new_from_xpm_data()</code></a>
 function to create a pixbuf from inline <span class="caps">XPM</span> image&nbsp;data.</p>
-<p>You can also copy an existing pixbuf with the <a href="method.Pixbuf.copy.html">gdk_pixbuf_copy()</a>
+<p>You can also copy an existing pixbuf with the <a href="method.Pixbuf.copy.html"><code>gdk_pixbuf_copy()</code></a>
 function. This is not the same as just acquiring a reference to
 the old pixbuf instance: the copy function will actually duplicate
 the pixel data in memory and create a new <a href="class.Pixbuf.html"><code>GdkPixbuf</code></a> instance
@@ -349,56 +350,56 @@ of&nbsp;one.</p>
 packed format. Rows in the image are stored top to bottom, and
 in each row pixels are stored from left to&nbsp;right.</p>
 <p>There may be padding at the end of a&nbsp;row.</p>
-<p>The &#8220;rowstride&#8221; value of a pixbuf, as returned by <a href="method.Pixbuf.get_rowstride.html">gdk_pixbuf_get_rowstride()</a>,
+<p>The &#8220;rowstride&#8221; value of a pixbuf, as returned by <a href="method.Pixbuf.get_rowstride.html"><code>gdk_pixbuf_get_rowstride()</code></a>,
 indicates the number of bytes between&nbsp;rows.</p>
 <p><strong><span class="caps">NOTE</span></strong>: If you are copying raw pixbuf data with <code>memcpy()</code> note that the
 last row in the pixbuf may not be as wide as the full rowstride, but rather
 just as wide as the pixel data needs to be; that is: it is unsafe to do
 <code>memcpy (dest, pixels, rowstride * height)</code> to copy a whole pixbuf. Use
-<a href="method.Pixbuf.copy.html">gdk_pixbuf_copy()</a> instead, or compute the width in bytes of the
+<a href="method.Pixbuf.copy.html"><code>gdk_pixbuf_copy()</code></a> instead, or compute the width in bytes of the
 last row&nbsp;as:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">last_row</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="p">((</span><span class="n">n_channels</span> <span class="o">*</span> <span class="n">bits_per_sample</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="n">last_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">((</span><span class="n">n_channels</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">bits_per_sample</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 
 <p>The same rule applies when iterating over each row of a <code>GdkPixbuf</code> pixels&nbsp;array.</p>
 <p>The following code illustrates a simple <code>put_pixel()</code>
 function for <span class="caps">RGB</span> pixbufs with 8 bits per channel with an alpha&nbsp;channel.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">static</span> <span class="kt">void</span>
-<span class="nf">put_pixel</span> <span class="p">(</span><span class="n">GdkPixbuf</span> <span class="o">*</span><span class="n">pixbuf</span><span class="p">,</span>
-           <span class="kt">int</span> <span class="n">x</span><span class="p">,</span>
-       <span class="kt">int</span> <span class="n">y</span><span class="p">,</span>
-       <span class="n">guchar</span> <span class="n">red</span><span class="p">,</span>
-       <span class="n">guchar</span> <span class="n">green</span><span class="p">,</span>
-       <span class="n">guchar</span> <span class="n">blue</span><span class="p">,</span>
-       <span class="n">guchar</span> <span class="n">alpha</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="kt">int</span> <span class="n">n_channels</span> <span class="o">=</span> <span class="n">gdk_pixbuf_get_n_channels</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"></span>
+<span class="nf">put_pixel</span><span class="w"> </span><span class="p">(</span><span class="n">GdkPixbuf</span><span class="w"> </span><span class="o">*</span><span class="n">pixbuf</span><span class="p">,</span><span class="w"></span>
+<span class="w">           </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="n">guchar</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="n">guchar</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="n">guchar</span><span class="w"> </span><span class="n">blue</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="n">guchar</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n_channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdk_pixbuf_get_n_channels</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span><span class="w"></span>
 
-  <span class="c1">// Ensure that the pixbuf is valid</span>
-  <span class="n">g_assert</span> <span class="p">(</span><span class="n">gdk_pixbuf_get_colorspace</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">)</span> <span class="o">==</span> <span class="n">GDK_COLORSPACE_RGB</span><span class="p">);</span>
-  <span class="n">g_assert</span> <span class="p">(</span><span class="n">gdk_pixbuf_get_bits_per_sample</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">);</span>
-  <span class="n">g_assert</span> <span class="p">(</span><span class="n">gdk_pixbuf_get_has_alpha</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">));</span>
-  <span class="n">g_assert</span> <span class="p">(</span><span class="n">n_channels</span> <span class="o">==</span> <span class="mi">4</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Ensure that the pixbuf is valid</span>
+<span class="w">  </span><span class="n">g_assert</span><span class="w"> </span><span class="p">(</span><span class="n">gdk_pixbuf_get_colorspace</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GDK_COLORSPACE_RGB</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_assert</span><span class="w"> </span><span class="p">(</span><span class="n">gdk_pixbuf_get_bits_per_sample</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_assert</span><span class="w"> </span><span class="p">(</span><span class="n">gdk_pixbuf_get_has_alpha</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_assert</span><span class="w"> </span><span class="p">(</span><span class="n">n_channels</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
 
-  <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">gdk_pixbuf_get_width</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span>
-  <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">gdk_pixbuf_get_height</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdk_pixbuf_get_width</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdk_pixbuf_get_height</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span><span class="w"></span>
 
-  <span class="c1">// Ensure that the coordinates are in a valid range</span>
-  <span class="n">g_assert</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">);</span>
-  <span class="n">g_assert</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Ensure that the coordinates are in a valid range</span>
+<span class="w">  </span><span class="n">g_assert</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">width</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_assert</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="p">);</span><span class="w"></span>
 
-  <span class="kt">int</span> <span class="n">rowstride</span> <span class="o">=</span> <span class="n">gdk_pixbuf_get_rowstride</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">rowstride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdk_pixbuf_get_rowstride</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span><span class="w"></span>
 
-  <span class="c1">// The pixel buffer in the GdkPixbuf instance</span>
-  <span class="n">guchar</span> <span class="o">*</span><span class="n">pixels</span> <span class="o">=</span> <span class="n">gdk_pixbuf_get_pixels</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// The pixel buffer in the GdkPixbuf instance</span>
+<span class="w">  </span><span class="n">guchar</span><span class="w"> </span><span class="o">*</span><span class="n">pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdk_pixbuf_get_pixels</span><span class="w"> </span><span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span><span class="w"></span>
 
-  <span class="c1">// The pixel we wish to modify</span>
-  <span class="n">guchar</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">pixels</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">rowstride</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">n_channels</span><span class="p">;</span>
-  <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">red</span><span class="p">;</span>
-  <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">green</span><span class="p">;</span>
-  <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">blue</span><span class="p">;</span>
-  <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="c1">// The pixel we wish to modify</span>
+<span class="w">  </span><span class="n">guchar</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pixels</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rowstride</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_channels</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">green</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blue</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="loading-images">Loading images<a class="md-anchor" href="#loading-images" title="Permanent link"></a></h2>
@@ -441,12 +442,14 @@ to a socket or store it in a&nbsp;database.</p>
         <ul>
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
         </ul>
       </div>
     </div>
+    
+
     
 
     
@@ -460,11 +463,11 @@ to a socket or store it in a&nbsp;database.</p>
         <ul>
         
           
-          <li class="interface">GIcon</a></li>
+          <li class="interface"><a class="external" href="javascript:void(0)" data-link="iface.Icon.html" data-namespace="Gio">GIcon</a></li>
           
         
           
-          <li class="interface">GLoadableIcon</a></li>
+          <li class="interface"><a class="external" href="javascript:void(0)" data-link="iface.LoadableIcon.html" data-namespace="Gio">GLoadableIcon</a></li>
           
         
         </ul>
@@ -555,7 +558,7 @@ to a socket or store it in a&nbsp;database.</p>
           <h6><a href="ctor.Pixbuf.new_from_file_at_size_utf8.html">gdk_pixbuf_new_from_file_at_size_utf8</a></h6>
 
           <div class="docblock">
-            <p>Same as&nbsp;gdk_pixbuf_new_from_file_at_size()</p>
+            <p>Same as <code>gdk_pixbuf_new_from_file_at_size()</code></p>
           </div>
 
           <div class="docblock"><p>Available since: 2.4</p></div>
@@ -565,7 +568,7 @@ to a socket or store it in a&nbsp;database.</p>
           <h6><a href="ctor.Pixbuf.new_from_file_utf8.html">gdk_pixbuf_new_from_file_utf8</a></h6>
 
           <div class="docblock">
-            <p>Same as&nbsp;gdk_pixbuf_new_from_file()</p>
+            <p>Same as <code>gdk_pixbuf_new_from_file()</code></p>
           </div>
 
           
@@ -641,6 +644,112 @@ storing as inline data in a&nbsp;program.</p>
 
           
         </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.calculate_rowstride.html">gdk_pixbuf_calculate_rowstride</a></h6>
+
+        <div class="docblock">
+          <p>Calculates the rowstride that an image created with those values would&nbsp;have.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.36.8</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.get_file_info.html">gdk_pixbuf_get_file_info</a></h6>
+
+        <div class="docblock">
+          <p>Parses an image file far enough to determine its format and&nbsp;size.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.4</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.get_file_info_async.html">gdk_pixbuf_get_file_info_async</a></h6>
+
+        <div class="docblock">
+          <p>Asynchronously parses an image file far enough to determine its
+format and&nbsp;size.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.32</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.get_file_info_finish.html">gdk_pixbuf_get_file_info_finish</a></h6>
+
+        <div class="docblock">
+          <p>Finishes an asynchronous pixbuf parsing operation started with&nbsp;gdk_pixbuf_get_file_info_async().</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.32</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.get_formats.html">gdk_pixbuf_get_formats</a></h6>
+
+        <div class="docblock">
+          <p>Obtains the available information about the image formats supported
+by&nbsp;GdkPixbuf.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.2</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.init_modules.html">gdk_pixbuf_init_modules</a></h6>
+
+        <div class="docblock">
+          <p>Initalizes the gdk-pixbuf loader modules referenced by the <code>loaders.cache</code>
+file present inside that&nbsp;directory.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.40</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.new_from_stream_async.html">gdk_pixbuf_new_from_stream_async</a></h6>
+
+        <div class="docblock">
+          <p>Creates a new pixbuf by asynchronously loading an image from an input&nbsp;stream.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.24</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.new_from_stream_at_scale_async.html">gdk_pixbuf_new_from_stream_at_scale_async</a></h6>
+
+        <div class="docblock">
+          <p>Creates a new pixbuf by asynchronously loading an image from an input&nbsp;stream.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.24</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Pixbuf.save_to_stream_finish.html">gdk_pixbuf_save_to_stream_finish</a></h6>
+
+        <div class="docblock">
+          <p>Finishes an asynchronous pixbuf save operation started with&nbsp;gdk_pixbuf_save_to_stream_async().</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 2.24</p></div>
+      </div>
       
       </div>
     </div>
@@ -810,7 +919,7 @@ function using&nbsp;gdk_pixbuf_set_option().</p>
           <div class="docblock">
             <p>Returns a <code>GHashTable</code> with a list of all the options that may have been
 attached to the <code>pixbuf</code> when it was loaded, or that may have been
-attached by another function using&nbsp;gdk_pixbuf_set_option().</p>
+attached by another function using <code>gdk_pixbuf_set_option()</code>.</p>
           </div>
           <div class="docblock"><p>Available since: 2.32</p></div>
         </div>
@@ -991,7 +1100,7 @@ result in a new&nbsp;pixbuf.</p>
         <div class="">
           <h6><a href="method.Pixbuf.savev_utf8.html">gdk_pixbuf_savev_utf8</a></h6>
           <div class="docblock">
-            <p>Same as&nbsp;gdk_pixbuf_savev()</p>
+            <p>Same as <code>gdk_pixbuf_savev()</code></p>
           </div>
           
         </div>
@@ -1037,11 +1146,73 @@ replacing the previous&nbsp;contents.</p>
 
       
         
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
       
 
       
         
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="iface.Icon.html" data-namespace="Gio">GIcon</a> (3)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.Icon.equal.html">g_icon_equal</a></h6>
+            <div class="docblock">
+              <p>Checks if two icons are&nbsp;equal.</p>
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.Icon.serialize.html">g_icon_serialize</a></h6>
+            <div class="docblock">
+              <p>Serializes a <code>GIcon</code> into a <code>GVariant</code>. An equivalent <code>GIcon</code> can be retrieved
+back by calling <code>g_icon_deserialize()</code> on the returned value.
+As serialization will avoid using raw icon data when possible, it only
+makes sense to transfer the <code>GVariant</code> between processes on the same machine,
+(as opposed to over the network), and within the same file system&nbsp;namespace.</p>
+            </div>
+            <div class="docblock"><p>Available since: 2.38</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.Icon.to_string.html">g_icon_to_string</a></h6>
+            <div class="docblock">
+              <p>Generates a textual representation of <code>icon</code> that can be used for
+serialization such as when passing <code>icon</code> to a different process or
+saving it to persistent storage. Use <code>g_icon_new_for_string()</code> to
+get <code>icon</code> back from the returned&nbsp;string.</p>
+            </div>
+            <div class="docblock"><p>Available since: 2.20</p></div>
+          
+          </div>
+        </div>
+        
       
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="iface.LoadableIcon.html" data-namespace="Gio">GLoadableIcon</a> (3)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.LoadableIcon.load.html">g_loadable_icon_load</a></h6>
+            <div class="docblock">
+              <p>Loads a loadable icon. For the asynchronous version of this function,
+see&nbsp;g_loadable_icon_load_async().</p>
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.LoadableIcon.load_async.html">g_loadable_icon_load_async</a></h6>
+            <div class="docblock">
+              <p>Loads an icon asynchronously. To finish this function, see
+g_loadable_icon_load_finish(). For the synchronous, blocking
+version of this function, see&nbsp;g_loadable_icon_load().</p>
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.LoadableIcon.load_finish.html">g_loadable_icon_load_finish</a></h6>
+            <div class="docblock">
+              <p>Finishes an asynchronous icon load started in&nbsp;g_loadable_icon_load_async().</p>
+            </div>
+            
+          
+          </div>
+        </div>
         
       
     </div>
@@ -1054,6 +1225,7 @@ replacing the previous&nbsp;contents.</p>
         <a href="#properties" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -1148,6 +1320,7 @@ the start of the next&nbsp;row.</p>
         </div>
       
       </div>
+      
 
       
         
@@ -1163,121 +1336,104 @@ the start of the next&nbsp;row.</p>
     
 
     
-
-    
-
-    
-
-     
-
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
       </h4>
 
-      <div class="docblock">
       
-      <div class="">
-        <h6><a href="type_func.Pixbuf.calculate_rowstride.html">gdk_pixbuf_calculate_rowstride</a></h6>
 
-        <div class="docblock">
-          <p>Calculates the rowstride that an image created with those values would&nbsp;have.</p>
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
         </div>
-
-        <div class="docblock"><p>Available since: 2.36.8</p></div>
-      </div>
+        
       
-      <div class="">
-        <h6><a href="type_func.Pixbuf.get_file_info.html">gdk_pixbuf_get_file_info</a></h6>
 
-        <div class="docblock">
-          <p>Parses an image file far enough to determine its format and&nbsp;size.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.4</p></div>
-      </div>
       
-      <div class="">
-        <h6><a href="type_func.Pixbuf.get_file_info_async.html">gdk_pixbuf_get_file_info_async</a></h6>
-
-        <div class="docblock">
-          <p>Asynchronously parses an image file far enough to determine its
-format and&nbsp;size.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.32</p></div>
-      </div>
+        
       
-      <div class="">
-        <h6><a href="type_func.Pixbuf.get_file_info_finish.html">gdk_pixbuf_get_file_info_finish</a></h6>
-
-        <div class="docblock">
-          <p>Finishes an asynchronous pixbuf parsing operation started with&nbsp;gdk_pixbuf_get_file_info_async().</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.32</p></div>
-      </div>
+        
       
-      <div class="">
-        <h6><a href="type_func.Pixbuf.get_formats.html">gdk_pixbuf_get_formats</a></h6>
 
-        <div class="docblock">
-          <p>Obtains the available information about the image formats supported
-by&nbsp;GdkPixbuf.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.2</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Pixbuf.init_modules.html">gdk_pixbuf_init_modules</a></h6>
-
-        <div class="docblock">
-          <p>Initalizes the gdk-pixbuf loader modules referenced by the <code>loaders.cache</code>
-file present inside that&nbsp;directory.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.40</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Pixbuf.new_from_stream_async.html">gdk_pixbuf_new_from_stream_async</a></h6>
-
-        <div class="docblock">
-          <p>Creates a new pixbuf by asynchronously loading an image from an input&nbsp;stream.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.24</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Pixbuf.new_from_stream_at_scale_async.html">gdk_pixbuf_new_from_stream_at_scale_async</a></h6>
-
-        <div class="docblock">
-          <p>Creates a new pixbuf by asynchronously loading an image from an input&nbsp;stream.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.24</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Pixbuf.save_to_stream_finish.html">gdk_pixbuf_save_to_stream_finish</a></h6>
-
-        <div class="docblock">
-          <p>Finishes an asynchronous pixbuf save operation started with&nbsp;gdk_pixbuf_save_to_stream_async().</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 2.24</p></div>
-      </div>
-      
-      </div>
     </div>
+    
+
+    
+
+    
+
     
 
   </section>
 </section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      <ul class="toc-list">
+      
+      
+        <li class="toc-list-item"><a href="#creating-new-gdkpixbuf"><span class="link-text">Creating new GdkPixbuf</span></a></li>
+      
+        <li class="toc-list-item"><a href="#reference-counting"><span class="link-text">Reference counting</span></a></li>
+      
+        <li class="toc-list-item"><a href="#image-data"><span class="link-text">Image Data</span></a></li>
+      
+        <li class="toc-list-item"><a href="#loading-images"><span class="link-text">Loading images</span></a></li>
+      
+        <li class="toc-list-item"><a href="#saving-images"><span class="link-text">Saving images</span></a></li>
+      
+      
+      </ul>
+      
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#implements"><span class="link-text">Implements</span></a></li>
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>
